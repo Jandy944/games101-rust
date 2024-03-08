@@ -2,7 +2,7 @@ use glam::{Vec2, Vec3, Vec4};
 
 pub struct Rgb(u8, u8, u8);
 
-struct Triangle{
+pub struct Triangle{
     pub v: [Vec3; 3], // 3 vertexes
     pub color: [Rgb; 3], // color at each vertex;
     pub texture_coords: [Vec2; 3], // texture u, v
@@ -36,9 +36,9 @@ impl Triangle{
 
     pub fn toVec4(&self) -> [Vec4; 3]{
         return [
-            Vec4::new(self.v[0].x(), self.v[0].y(), self.v[0].z(), 1.0f),
-            Vec4::new(self.v[1].x(), self.v[1].y(), self.v[1].z(), 1.0f),
-            Vec4::new(self.v[2].x(), self.v[2].y(), self.v[2].z(), 1.0f),
+            Vec4::new(self.v[0].x, self.v[0].y, self.v[0].z, 1.0),
+            Vec4::new(self.v[1].x, self.v[1].y, self.v[1].z, 1.0),
+            Vec4::new(self.v[2].x, self.v[2].y, self.v[2].z, 1.0),
         ];
     }
 }
